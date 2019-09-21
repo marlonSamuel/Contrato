@@ -52,7 +52,7 @@ model.empleadoInfoController = {
         self.empleado.email(empleado.email);
 
         empleado.contratos.forEach(function(c){
-            if(!c.vencido){
+            if(!c.vencido && c.deleted_at === null){
                 self.empleado.cargo(c.unidad_cargo.cargo.nombre);
                 self.empleado.departamento(c.unidad_cargo.unidad.nombre);
             }
